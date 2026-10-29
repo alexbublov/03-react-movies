@@ -1,5 +1,5 @@
 import type { GetMoviesParams, GetMoviesResponse } from '../types/movie';
-import { VITE_TMDB_TOKEN } from '../vite.env';
+import { VITE_TMDB_TOKEN } from '../vite.env.d';
 import { serverApi } from './movieService';
 
 export const getMovies = async (params: GetMoviesParams) => {
