@@ -1,7 +1,7 @@
 import toast, { Toaster } from 'react-hot-toast';
 import css from './App.module.css';
 import SearchBar from '../SearchBar/SearchBar';
-import { getMovies } from '../../services/movie';
+import { getMovies } from '../../services/movieService';
 import MovieGrid from '../MovieGrid/MovieGrid';
 import type { Movie } from '../../types/movie';
 import { useState } from 'react';
@@ -37,10 +37,12 @@ const App = () => {
 
   const handleMovieSelect = (movie: Movie) => {
     setSelectedMovie(movie);
+    document.body.style.overflow = 'hidden';
   };
 
   const handleModalClose = () => {
     setSelectedMovie(null);
+    document.body.style.overflow = 'visible';
   };
 
   return (

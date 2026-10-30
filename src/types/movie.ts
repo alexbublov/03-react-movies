@@ -1,13 +1,3 @@
-export interface GetMoviesParams {
-  query: string;
-  include_adult?: boolean;
-  language?: string;
-  primary_release_year?: string;
-  page?: number;
-  region?: string;
-  year?: string;
-}
-
 // export interface Movie {
 //   adult: boolean;
 //   backdrop_path: string;
@@ -33,9 +23,4 @@ export interface Movie {
   overview: string;
   release_date: string;
   vote_average: number;
-}
-
-export interface GetMoviesResponse {
-  page: 1;
-  results: Movie[];
 }
