@@ -7,7 +7,7 @@ export const serverApi = axios.create({
 });
 
 export interface GetMoviesResponse {
-  page: 1;
+  page: number;
   results: Movie[];
 }
 
@@ -21,7 +21,9 @@ export interface GetMoviesParams {
   year?: string;
 }
 
-export const getMovies = async (params: GetMoviesParams) => {
+export const getMovies = async (
+  params: GetMoviesParams
+): Promise<GetMoviesResponse> => {
   const res = await serverApi.get<GetMoviesResponse>('/3/search/movie', {
     params,
     headers: {

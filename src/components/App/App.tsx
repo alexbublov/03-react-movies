@@ -35,14 +35,12 @@ const App = () => {
     }
   };
 
-  const handleMovieSelect = (movie: Movie) => {
+  const handleModalOpen = (movie: Movie) => {
     setSelectedMovie(movie);
-    document.body.style.overflow = 'hidden';
   };
 
   const handleModalClose = () => {
     setSelectedMovie(null);
-    document.body.style.overflow = 'visible';
   };
 
   return (
@@ -53,7 +51,7 @@ const App = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        <MovieGrid onSelect={handleMovieSelect} movies={movies} />
+        <MovieGrid onSelect={handleModalOpen} movies={movies} />
       )}
       {error && <ErrorMessage />}
 

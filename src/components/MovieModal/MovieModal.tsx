@@ -20,6 +20,17 @@ const MovieModal = ({ movie, onClose }: MovieModalProps) => {
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [onClose]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      document.body.style.overflow = 'hidden';
+    };
+
+    handleScroll();
+    return () => {
+      document.body.style.overflow = 'visible';
+    };
+  }, [onClose]);
+
   return createPortal(
     <div
       className={css.backdrop}
